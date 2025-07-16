@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEELCYCLE様向け新デザイン提案フロー | 中町印刷 × 小松原梱包</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- GSAP (GreenSock Animation Platform) & ScrollTrigger Plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* 基本スタイルの設定 */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        /* ネオン風のテキストシャドウ */
+        .neon-text-cyan {
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.5), 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+        .neon-text-magenta {
+            text-shadow: 0 0 5px rgba(255, 0, 255, 0.7), 0 0 10px rgba(255, 0, 255, 0.5), 0 0 15px rgba(255, 0, 255, 0.3);
+        }
+        .neon-border-cyan {
+            border-color: #00ffff;
+            box-shadow: 0 0 8px rgba(0, 255, 255, 0.5), inset 0 0 8px rgba(0, 255, 255, 0.3);
+        }
+
+        /* セクションタイトルのスタイル */
+        .section-title {
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            line-height: 1.1;
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 5rem;
+            }
+        }
+
+        /* ガラス風の背景スタイル (Glassmorphism) */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        /* スクロールダウンインジケーターのアニメーション */
+        .scroll-down {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* 背景のグリッド線 */
+        .background-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: pan 60s linear infinite;
+        }
+        @keyframes pan {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 500px; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ヘッダー -->
+    <header class="fixed top-0 left-0 w-full p-4 z-50 bg-black/30 backdrop-blur-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-lg font-bold text-white">中町印刷 × 小松原梱包</h1>
+            <p class="text-sm text-cyan-300 neon-text-cyan">for FEELCYCLE</p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="h-screen flex items-center justify-center text-center relative overflow-hidden">
+            <div class="background-grid"></div>
+            <div class="z-10 p-4">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-300 mb-4" data-hero-anim>未来のデザイン提案へ。</h2>
+                <h1 class="text-5xl md:text-8xl font-black text-white mb-8 leading-tight">
+                    <span class="text-cyan-400 neon-text-cyan" data-hero-anim>リスクゼロで、</span><br>
+                    <span class="text-magenta-400 neon-text-magenta" data-hero-anim>価値を最大化する</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto" data-hero-anim>
+                    AIとテンプレートを活用した、失注コストゼロの革新的ワークフローをご提案します。
+                </p>
+            </div>
+            <div class="scroll-down absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
+                <span class="text-sm">SCROLL</span>
+                <svg class="w-6 h-6 mt-1 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </div>
+        </section>
+
+        <!-- Section 1: The Challenge (課題) -->
+        <section id="challenge" class="py-20 md:py-32 container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-cyan-400 font-semibold text-lg" data-anim>OUR CHALLENGE</p>
+                <h2 class="section-title text-white" data-anim>「気に入れば採用」<br>その言葉が、見えない壁になる。</h2>
+                <p class="max-w-2xl mx-auto mt-4 text-gray-400" data-anim>デザイン部門を持たない私たちにとって、FEELCYCLE様の高品質な要求に応えるための外注提案は、常に大きなビジネスリスクを伴いました。</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8" data-anim>
+                    <div class="flex items-center mb-4">
+                        <svg class="w-12 h-12 text-magenta-400 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1h4v1h-4zm-2 18h4v-1h-4v1zm-2-2h8v-1h-8v1zm-2-2h12v-1h-12v1zm-1-2h14v-1h-14v1zm-1-2h16v-1h-16v1z"></path></svg>
+                        <h3 class="text-2xl font-bold text-white">失注コストと不確定費用</h3>
+                    </div>
+                    <p class="text-gray-400">外部デザイナーへの失注時費用（5万円〜）に加え、採用決定後のデザイン料は都度交渉。この不確定なコストが、積極的な提案活動の足かせとなっていました。</p>
+                </div>
+                <div class="glass-card p-8" data-anim>
+                    <div class="flex items-center mb-4">
+                        <svg class="w-12 h-12 text-cyan-400 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <h3 class="text-2xl font-bold text-white">スピード感の欠如</h3>
+                    </div>
+                    <p class="text-gray-400">外部との調整には時間がかかり、短納期が求められる案件への対応が困難でした。機会損失は、目に見えない大きなコストです。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: The Solution (解決策) -->
+        <section id="solution" class="py-20 md:py-32 bg-black">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-magenta-400 font-semibold text-lg" data-anim>THE SOLUTION</p>
+                <h2 class="section-title text-white" data-anim>AI × Canva<br>内製が生み出す、新次元の提案力。</h2>
+                <p class="max-w-3xl mx-auto mt-4 text-gray-400" data-anim>
+                    生成AIによるビジュアル創造と、Canvaによる迅速なレイアウト。この2つを組み合わせ、90%完成度のモックを内製します。
+                    外注は「採用決定後」の仕上げのみ。これにより、失注リスクは完全にゼロになります。
+                </p>
+                <div class="mt-16" data-anim>
+                    <div class="relative max-w-4xl mx-auto">
+                        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-magenta-500 rounded-lg transform -rotate-1"></div>
+                        <div class="relative p-8 bg-gray-900 rounded-lg shadow-lg">
+                            <div class="grid md:grid-cols-3 gap-8 items-center text-center">
+                                <div class="text-left">
+                                    <h4 class="text-xl font-bold text-white">従来方式</h4>
+                                    <p class="text-gray-400">高リスク・低速</p>
+                                    <p class="text-2xl font-bold text-red-500 mt-2">外注費: 未定</p>
+                                </div>
+                                <div class="flex justify-center items-center">
+                                    <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                </div>
+                                <div class="text-right">
+                                    <h4 class="text-xl font-bold text-white">新方式 (AI+Canva)</h4>
+                                    <p class="text-gray-400">ゼロリスク・高速</p>
+                                    <p class="text-2xl font-bold text-green-400 mt-2">初期費用: 0円</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Workflow (ワークフロー) -->
+        <section id="workflow" class="py-20 md:py-32 container mx-auto px-6">
+            <div class="text-center mb-20">
+                <p class="text-cyan-400 font-semibold text-lg" data-anim>4-STEP WORKFLOW</p>
+                <h2 class="section-title text-white" data-anim>思考を止めない、<br>シームレスな制作プロセス。</h2>
+            </div>
+            <div class="relative">
+                <!-- Vertical line -->
+                <div class="absolute top-0 h-full w-0.5 bg-cyan-500/30 left-4 md:left-1/2 md:-translate-x-px"></div>
+                <div class="space-y-16">
+                    <!-- Step 1 -->
+                    <div class="relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-8 items-start">
+                        <div class="md:text-right" data-anim>
+                            <div class="pl-12 md:pl-0 glass-card p-6">
+                                <p class="text-magenta-400 font-bold">STEP 01</p>
+                                <h3 class="text-2xl font-bold text-white mt-1">ヒアリング</h3>
+                                <p class="text-gray-400 mt-2">小松原梱包様が課題・素材・必須文言を確認。私たちはその要件定義に集中します。</p>
+                            </div>
+                        </div>
+                        <div class="absolute md:static left-4 top-0 md:top-auto md:left-auto w-5 h-5 rounded-full bg-cyan-400 border-4 border-gray-800" data-anim></div>
+                        <div></div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-8 items-start">
+                        <div></div>
+                        <div class="absolute md:static left-4 top-0 md:top-auto md:left-auto w-5 h-5 rounded-full bg-cyan-400 border-4 border-gray-800" data-anim></div>
+                        <div data-anim>
+                             <div class="pl-12 md:pl-0 glass-card p-6">
+                                <p class="text-magenta-400 font-bold">STEP 02</p>
+                                <h3 class="text-2xl font-bold text-white mt-1">AI + Canva ラフ制作</h3>
+                                <p class="text-gray-400 mt-2">中町印刷が、生成AIとCanvaを駆使し、90%完成度のモックを複数案、最短1日で作成します。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-8 items-start">
+                        <div class="md:text-right" data-anim>
+                            <div class="pl-12 md:pl-0 glass-card p-6">
+                                <p class="text-magenta-400 font-bold">STEP 03</p>
+                                <h3 class="text-2xl font-bold text-white mt-1">レビュー & 方向性決定</h3>
+                                <p class="text-gray-400 mt-2">小松原梱包様がラフ案をレビュー。FEELCYCLE様へご提案いただき、採用案を1点に絞ります。</p>
+                            </div>
+                        </div>
+                        <div class="absolute md:static left-4 top-0 md:top-auto md:left-auto w-5 h-5 rounded-full bg-cyan-400 border-4 border-gray-800" data-anim></div>
+                        <div></div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="relative md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-8 items-start">
+                        <div></div>
+                        <div class="absolute md:static left-4 top-0 md:top-auto md:left-auto w-5 h-5 rounded-full bg-cyan-400 border-4 border-gray-800" data-anim></div>
+                        <div data-anim>
+                             <div class="pl-12 md:pl-0 glass-card p-6">
+                                <p class="text-magenta-400 font-bold">STEP 04</p>
+                                <h3 class="text-2xl font-bold text-white mt-1">仕上げ & 印刷</h3>
+                                <p class="text-gray-400 mt-2">採用決定後、初めて外部デザイナーへ清書を発注。リスクなく、高品質な印刷物へと仕上げます。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Visual Showcase (作例) -->
+        <section id="showcase" class="py-20 md:py-32 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <p class="text-magenta-400 font-semibold text-lg" data-anim>VISUAL SHOWCASE</p>
+                    <h2 class="section-title text-white" data-anim>コンセプトが、<br>カタチになる瞬間。</h2>
+                    <p class="max-w-2xl mx-auto mt-4 text-gray-400" data-anim>これらは全てCanvaとAIで作成したモックアップのイメージです。<br>ここからブラッシュアップし、最終デザインへと昇華させます。</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Sample 1: 芽吹き型ダイカット -->
+                    <a href="mockups.html" class="showcase-card group relative aspect-square overflow-hidden rounded-lg transform transition-transform duration-500 hover:scale-105 block">
+                        <img src="images/mockup-1-budding.png" class="w-full h-full object-cover" alt="芽吹き型ダイカット - 暗闇が映し出す、本当の自分。FEELCYCLE">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">芽吹き型ダイカット</h3>
+                                <p class="text-cyan-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">コンセプト：新しい私</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Sample 2: ミラー型ダイカット -->
+                    <a href="mockups.html" class="showcase-card group relative aspect-square overflow-hidden rounded-lg transform transition-transform duration-500 hover:scale-105 block">
+                        <img src="images/mockup-2-mirror.png" class="w-full h-full object-cover" alt="ミラー型ダイカット - 運動を超えた、新しい私。FEELCYCLE">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">ミラー型ダイカット</h3>
+                                <p class="text-magenta-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">コンセプト：本当の自分</p>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Sample 3: リボン型ダイカット -->
+                    <a href="mockups.html" class="showcase-card group relative aspect-square overflow-hidden rounded-lg transform transition-transform duration-500 hover:scale-105 block">
+                        <img src="images/mockup-3-ribbon.png" class="w-full h-full object-cover" alt="リボン型ダイカット - 楽しさが、体を変える。FEELCYCLE">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">リボン型ダイカット</h3>
+                                <p class="text-green-300 mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">コンセプト：楽しさが体を変える</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: The Impact (期待効果) -->
+        <section id="impact" class="py-20 md:py-32 container mx-auto px-6">
+            <div class="text-center mb-16">
+                <p class="text-cyan-400 font-semibold text-lg" data-anim>EXPECTED IMPACT</p>
+                <h2 class="section-title text-white" data-anim>コストを削り、<br>クリエイティビティを加速する。</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="glass-card p-8" data-anim>
+                    <h3 class="text-6xl font-black text-cyan-400 neon-text-cyan" id="impact-number-1">0</h3>
+                    <p class="text-xl font-bold text-white mt-2">円</p>
+                    <p class="text-gray-400 mt-1">失注時損失</p>
+                </div>
+                <div class="glass-card p-8" data-anim>
+                    <h3 class="text-6xl font-black text-magenta-400 neon-text-magenta">最大70</h3>
+                    <p class="text-xl font-bold text-white mt-2">% 削減<span class="text-sm font-normal">（目標）</span></p>
+                    <p class="text-gray-400 mt-1">外注コスト</p>
+                </div>
+                <div class="glass-card p-8" data-anim>
+                    <h3 class="text-6xl font-black text-green-400">7日 → 3日</h3>
+                    <p class="text-xl font-bold text-white mt-2">へ短縮</p>
+                    <p class="text-gray-400 mt-1">提案スピード</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Next Steps (次のアクション) -->
+        <section id="next-steps" class="py-20 md:py-32 bg-black">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-magenta-400 font-semibold text-lg" data-anim>NEXT ACTION</p>
+                <h2 class="section-title text-white" data-anim>未来への、確かな一歩。</h2>
+                <p class="max-w-2xl mx-auto mt-4 text-gray-400" data-anim>この新提案フローが成功した暁には、ぜひパイロット案件で<br>その効果を共に検証させていただけますと幸いです。</p>
+                <div class="mt-12" data-anim>
+                    <a href="#" class="inline-block bg-gradient-to-r from-cyan-500 to-magenta-500 text-white font-bold text-lg py-4 px-12 rounded-full transform transition-transform duration-300 hover:scale-105">
+                        今後の展開について相談する
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="py-8 text-center text-gray-500">
+        <p>&copy; 2025 中町印刷 × 小松原梱包. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // GSAPアニメーションの設定
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Heroセクションのアニメーション
+        gsap.from("[data-hero-anim]", {
+            duration: 1,
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            ease: "power3.out",
+            delay: 0.5
+        });
+
+        // スクロールトリガーによる汎用アニメーション
+        const animatedElements = document.querySelectorAll('[data-anim]');
+        animatedElements.forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 85%", // 画面の85%の位置で開始
+                    toggleActions: "play none none none",
+                },
+                duration: 1,
+                opacity: 0,
+                y: 50,
+                ease: "power3.out",
+            });
+        });
+
+        // Showcaseカードのアニメーション
+        gsap.from(".showcase-card", {
+            scrollTrigger: {
+                trigger: "#showcase",
+                start: "top 70%",
+            },
+            duration: 0.8,
+            opacity: 0,
+            y: 60,
+            stagger: 0.2,
+            ease: "power3.out",
+        });
+
+        // Impactセクションの数字カウンターアニメーション
+        ScrollTrigger.create({
+            trigger: "#impact",
+            start: "top 70%",
+            onEnter: () => {
+                const animateNumber = (el, finalValue) => {
+                    let obj = { val: 0 };
+                    gsap.to(obj, {
+                        duration: 2,
+                        val: finalValue,
+                        ease: "power3.out",
+                        onUpdate: () => {
+                            el.textContent = Math.floor(obj.val);
+                        }
+                    });
+                };
+                animateNumber(document.getElementById('impact-number-1'), 0);
+            },
+            once: true // アニメーションを1回だけ実行
+        });
+    </script>
+
+</body>
+</html>

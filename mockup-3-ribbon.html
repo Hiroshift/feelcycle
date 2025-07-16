@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リボン型ダイカット詳細 | FEELCYCLE様向け新デザイン提案</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .neon-text-green {
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.7), 0 0 10px rgba(0, 255, 0, 0.5), 0 0 15px rgba(0, 255, 0, 0.3);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+        }
+
+        .background-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: pan 60s linear infinite;
+        }
+        @keyframes pan {
+            0% { background-position: 0 0; }
+            100% { background-position: 1000px 500px; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ヘッダー -->
+    <header class="fixed top-0 left-0 w-full p-4 z-50 bg-black/30 backdrop-blur-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="mockups.html" class="text-lg font-bold text-white hover:text-green-400 transition-colors">← 戻る</a>
+            <p class="text-sm text-green-300 neon-text-green">リボン型ダイカット詳細</p>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="h-screen flex items-center justify-center text-center relative overflow-hidden">
+            <div class="background-grid"></div>
+            <div class="z-10 p-4 max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-black text-white mb-8 leading-tight" data-hero-anim>
+                    ダイナミック・リボン型<br><span class="text-green-400 neon-text-green">キャッチコピー</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto" data-hero-anim>
+                    「楽しさが、体を変える。」を "ひねり映え" するリボン形状に落とし込んで、躍動感と都会的なスタイルを両立させました。
+                </p>
+            </div>
+        </section>
+
+        <!-- メイン画像 -->
+        <section class="py-20 container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="glass-card p-8 mb-12" data-anim>
+                    <img src="images/mockup-3-ribbon.png" class="w-full max-w-2xl mx-auto rounded-lg shadow-2xl" alt="リボン型ダイカット - 楽しさが、体を変える。FEELCYCLE">
+                </div>
+            </div>
+        </section>
+
+        <!-- デザインポイント -->
+        <section class="py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center" data-anim>デザインポイント</h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mt-16">
+                        <div class="glass-card p-8" data-anim>
+                            <h3 class="text-2xl font-bold text-green-400 mb-4">ひねりリボン形状</h3>
+                            <p class="text-gray-400">ワークアウトの高揚感＝リボンが跳ねる動きで可視化</p>
+                        </div>
+                        
+                        <div class="glass-card p-8" data-anim>
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-4">ディープネイビー×電光グラデ</h3>
+                            <p class="text-gray-400">夜のスタジオ×ネオン照明を抽象化。高級感もプラス</p>
+                        </div>
+                        
+                        <div class="glass-card p-8" data-anim>
+                            <h3 class="text-2xl font-bold text-magenta-400 mb-4">エメラルド発光文字</h3>
+                            <p class="text-gray-400">"楽しい" をクールに伝える、色気のあるトーン</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- デザイン詳細 -->
+        <section class="py-20 container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 text-center" data-anim>デザイン詳細</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 mt-16">
+                    <div class="glass-card p-8" data-anim>
+                        <h3 class="text-2xl font-bold text-green-400 mb-4">形状の特徴</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">動的シルエット</h4>
+                                <p class="text-gray-400">リボンが風になびくような有機的な曲線</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">躍動感</h4>
+                                <p class="text-gray-400">ワークアウトのエネルギーを視覚化</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">都会的スタイル</h4>
+                                <p class="text-gray-400">モダンで洗練されたデザイン</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-8" data-anim>
+                        <h3 class="text-2xl font-bold text-cyan-400 mb-4">カラー戦略</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">ディープネイビー</h4>
+                                <p class="text-gray-400">夜のスタジオの雰囲気を表現</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">電光グラデーション</h4>
+                                <p class="text-gray-400">ネオン照明の効果を抽象化</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">エメラルドグリーン</h4>
+                                <p class="text-gray-400">活力と成長を象徴する色</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- メッセージ性 -->
+        <section class="py-20 bg-black">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8" data-anim>メッセージ性</h2>
+                    <div class="glass-card p-8" data-anim>
+                        <h3 class="text-2xl font-bold text-green-400 mb-4">「楽しさが、体を変える。」</h3>
+                        <p class="text-lg text-gray-300 mb-6">このメッセージを "ひねり映え" するリボン形状に落とし込むことで、</p>
+                        <div class="grid md:grid-cols-2 gap-6 text-left">
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">躍動感</h4>
+                                <p class="text-gray-400">リボンの動きでワークアウトの楽しさを表現</p>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white mb-2">都会的スタイル</h4>
+                                <p class="text-gray-400">モダンで洗練されたデザインでブランドイメージを強化</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="py-8 text-center text-gray-500">
+        <p>&copy; 2025 中町印刷 × 小松原梱包. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Heroセクションのアニメーション
+        gsap.from("[data-hero-anim]", {
+            duration: 1,
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            ease: "power3.out",
+            delay: 0.5
+        });
+
+        // スクロールトリガーによる汎用アニメーション
+        const animatedElements = document.querySelectorAll('[data-anim]');
+        animatedElements.forEach(el => {
+            gsap.from(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 85%",
+                    toggleActions: "play none none none",
+                },
+                duration: 1,
+                opacity: 0,
+                y: 50,
+                ease: "power3.out",
+            });
+        });
+    </script>
+
+</body>
+</html> 
