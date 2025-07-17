@@ -7,7 +7,7 @@
     
     <!-- OGP (Open Graph Protocol) -->
     <meta property="og:title" content="FEELCYCLE様向け新デザイン提案フロー | 小松原梱包 × 中町印刷">
-    <meta property="og:description" content="AIとテンプレートを活用した、失注コストゼロの革新的ワークフローをご提案します。リスクゼロで価値を最大化する新次元の提案力。">
+    <meta property="og:description" content="AIとテンプレートを活用した、失注コストを大幅削減する革新的ワークフローをご提案します。リスクを最小化し価値を最大化する新次元の提案力。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="">
     <meta property="og:image" content="images/thumbnail.png">
@@ -18,7 +18,7 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="FEELCYCLE様向け新デザイン提案フロー | 小松原梱包 × 中町印刷">
-    <meta name="twitter:description" content="AIとテンプレートを活用した、失注コストゼロの革新的ワークフローをご提案します。リスクゼロで価値を最大化する新次元の提案力。">
+    <meta name="twitter:description" content="AIとテンプレートを活用した、失注コストを大幅削減する革新的ワークフローをご提案します。リスクを最小化し価値を最大化する新次元の提案力。">
     <meta name="twitter:image" content="images/thumbnail.png">
     
     <!-- Tailwind CSS -->
@@ -92,6 +92,19 @@
             }
         }
         
+        /* カード重なり時の輝く効果 */
+        .card-overlap {
+            animation: glow 3s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(255, 0, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), 0 0 60px rgba(255, 0, 255, 0.4);
+            }
+        }
+        
         /* 背景のグリッド線 */
         .background-grid {
             position: absolute;
@@ -131,12 +144,12 @@
                 <h2 class="text-3xl md:text-5xl font-bold text-gray-300 mb-4" data-hero-anim>未来のデザイン提案へ。</h2>
                 <h1 class="text-5xl md:text-8xl font-black text-white mb-4 mt-2">
   <span class="text-cyan-400 neon-text-cyan" data-hero-anim>リスク</span>
-  <span class="text-cyan-300 neon-text-cyan font-extrabold text-5xl md:text-8xl align-middle" data-hero-anim>ゼロ</span>
+  <span class="text-cyan-300 neon-text-cyan font-extrabold text-5xl md:text-8xl align-middle" data-hero-anim>最小</span>
   <span class="text-cyan-400 neon-text-cyan" data-hero-anim>で、</span><br>
   <span class="text-magenta-400 neon-text-magenta" data-hero-anim>価値を最大化する</span>
 </h1>
                 <p class="text-lg md:text-xl text-gray-400 max-w-full md:max-w-4xl mx-auto leading-relaxed" data-hero-anim>
-  AIとテンプレートを活用した、失注コストゼロの革新的ワークフローをご提案します。
+  AIとデザインアプリを活用した、失注コストを大幅削減する革新的ワークフローをご提案します。
 </p>
             </div>
             <div class="scroll-down absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center">
@@ -150,7 +163,7 @@
             <div class="text-center mb-16">
                 <p class="text-cyan-400 font-semibold text-lg" data-anim>OUR CHALLENGE</p>
                 <h2 class="section-title text-white mb-12 data-anim>「気に入れば採用」その言葉が、<br class="hidden md:block">見えない壁になる。</h2>
-                <p class="max-w-2xl mx-auto mt-4 text-gray-400 text-base md:text-lg leading-relaxed" data-anim>デザイン部門を持たない私たちにとって、FEELCYCLE様の高品質な要求に応えるための外注提案は、常に大きなビジネスリスクを伴いました。</p>
+                <p class="max-w-2xl mx-auto mt-4 text-gray-400 text-base md:text-lg leading-relaxed" data-anim>デザイン部門を持たない私たちにとって、FEELCYCLE様のご要望に応えるには、<br class="hidden md:block">大きなリスクを伴いました。</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 items-stretch">
                 <div class="glass-card p-8 h-full flex flex-col" data-anim>
@@ -158,7 +171,7 @@
                         <svg class="w-12 h-12 text-magenta-400 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v-1h4v1h-4zm-2 18h4v-1h-4v1zm-2-2h8v-1h-8v1zm-2-2h12v-1h-12v1zm-1-2h14v-1h-14v1zm-1-2h16v-1h-16v1z"></path></svg>
                         <h3 class="text-2xl font-bold text-white">失注コストと不確定費用</h3>
                     </div>
-                    <p class="text-gray-400 text-base md:text-lg leading-relaxed">外部デザイナーへの失注時費用（5万円〜）に加え、採用決定後のデザイン料は都度交渉。この不確定なコストが、積極的な提案活動の足かせとなっていました。</p>
+                    <p class="text-gray-400 text-base md:text-lg leading-relaxed">外部デザイナーへの失注時費用（10万円〜）に加え、採用決定後のデザイン料は都度交渉。この不確定なコストが、積極的な提案活動の足かせとなっていました。</p>
                 </div>
                 <div class="glass-card p-8 h-full flex flex-col" data-anim>
                     <div class="flex items-center mb-4">
@@ -176,26 +189,33 @@
                 <p class="text-magenta-400 font-semibold text-lg" data-anim>THE SOLUTION</p>
                 <h2 class="section-title text-white mb-12 data-anim>AI × Canva 内製が生み出す、<br class="hidden md:block">新次元の提案力。</h2>
                 <p class="max-w-3xl mx-auto mt-4 text-gray-400 text-base md:text-lg leading-relaxed" data-anim>
-                    生成AIによるビジュアル創造と、Canvaによる迅速なレイアウト。この2つを組み合わせ、90%完成度のモックを内製します。
-                    外注は「採用決定後」の仕上げのみ。中町印刷がプレゼン費用を全額負担し、小松原梱包は結果に応じて費用を分担します。
+                    生成AIによるビジュアル創造と、Canvaによる迅速なレイアウト。<br class="hidden md:block">
+                    この2つを組み合わせ、60〜70%完成度のモックを内製します。<br><br>
+                    外注費は「採用決定後」のみ発生。<br class="hidden md:block">
+                    中町印刷がプレゼン費用を全額負担し、<br class="hidden md:block">
+                    小松原梱包は結果に応じて費用を分担し、リスクを最小化します。
                 </p>
                 <div class="mt-16" data-anim>
                     <div class="relative max-w-4xl mx-auto">
-                        <div class="absolute inset-0 bg-gradient-to-r from-cyan-500 to-magenta-500 rounded-lg transform -rotate-1"></div>
-                        <div class="relative p-8 bg-gray-900 rounded-lg shadow-lg">
-                            <div class="grid md:grid-cols-3 gap-8 items-center text-center">
-                                <div class="text-left">
-                                    <h4 class="text-xl font-bold text-white">従来方式</h4>
-                                    <p class="text-gray-400">高リスク・低速</p>
-                                    <p class="text-2xl font-bold text-red-500 mt-2">外注費: 未定</p>
-                                </div>
-                                <div class="flex justify-center items-center">
-                                    <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                                </div>
-                                <div class="text-right">
-                                    <h4 class="text-xl font-bold text-white">新方式 (AI+Canva)</h4>
-                                    <p class="text-gray-400">リスク軽減・高速</p>
-                                    <p class="text-2xl font-bold text-cyan-400 mt-2">初期費用: 結果連動</p>
+                        <!-- 背景のカード（従来方式） -->
+                        <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg opacity-80" id="old-card"></div>
+                        <!-- 前面のカード（新方式） -->
+                        <div class="relative bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg shadow-2xl" id="new-card">
+                            <div class="p-8 bg-gray-900/90 backdrop-blur-sm rounded-lg">
+                                <div class="grid md:grid-cols-3 gap-8 items-center text-center">
+                                    <div class="text-left">
+                                        <h4 class="text-xl font-bold text-white">従来方式</h4>
+                                        <p class="text-gray-400">高リスク・低速</p>
+                                        <p class="text-2xl font-bold text-red-500 mt-2">外注費: 未定</p>
+                                    </div>
+                                    <div class="flex justify-center items-center">
+                                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                    </div>
+                                    <div class="text-right">
+                                        <h4 class="text-xl font-bold text-white">新方式 (AI+Canva)</h4>
+                                        <p class="text-gray-400">リスク最小化・高速</p>
+                                        <p class="text-2xl font-bold text-cyan-400 mt-2">初期費用: 結果連動</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -234,7 +254,7 @@
                              <div class="pl-12 md:pl-6 glass-card p-6">
                                 <p class="text-magenta-400 font-bold">STEP 02</p>
                                 <h3 class="text-2xl font-bold text-white mt-1">AI + Canva ラフ制作</h3>
-                                <p class="text-gray-400 mt-2 text-base md:text-lg leading-relaxed">生成AIとCanvaを駆使し、80%完成度のモックを複数案、最短1日で作成します。</p>
+                                <p class="text-gray-400 mt-2 text-base md:text-lg leading-relaxed">生成AIとCanvaを駆使し、60〜70％完成度のモックを複数案、最短2日で作成します。</p>
                             </div>
                         </div>
                     </div>
@@ -258,7 +278,7 @@
                              <div class="pl-12 md:pl-6 glass-card p-6">
                                 <p class="text-magenta-400 font-bold">STEP 04</p>
                                 <h3 class="text-2xl font-bold text-white mt-1">仕上げ & 印刷</h3>
-                                <p class="text-gray-400 mt-2 text-base md:text-lg leading-relaxed">採用決定後、外部デザイナーへ清書を発注。費用が発生。</p>
+                                <p class="text-gray-400 mt-2 text-base md:text-lg leading-relaxed">採用決定後、外部デザイナーへ発注。費用が発生。</p>
                             </div>
                         </div>
                     </div>
@@ -272,7 +292,7 @@
                 <p class="text-cyan-400 font-semibold text-lg" data-anim>COST SHARING</p>
                 <h2 class="section-title text-white mb-12" data-anim>公平な負担分担で、<br class="hidden md:block">リスクを最小化。</h2>
                 <p class="max-w-2xl mx-auto mt-4 text-gray-400 text-base md:text-lg leading-relaxed" data-anim>
-                    中町印刷の提案負担を考慮し、小松原梱包も初期費用を分担することで、お互いのリスクを軽減します。
+                    中町印刷の提案負担を考慮し、小松原梱包も初期費用を分担することで、<br class="hidden md:block"> お互いのリスクを最小化します。
                 </p>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
@@ -302,7 +322,7 @@
                     <ul class="text-gray-400 space-y-3">
                         <li class="flex items-start">
                             <span class="text-magenta-400 mr-2">•</span>
-                            プレゼン費用5万円の全額負担
+                            プレゼン費用2.5万円の全額負担
                         </li>
                         <li class="flex items-start">
                             <span class="text-magenta-400 mr-2">•</span>
@@ -393,7 +413,7 @@
                     <p class="text-gray-400 mt-1">最大失注時損失</p>
                 </div>
                 <div class="glass-card p-8" data-anim>
-                    <h3 class="text-6xl font-black text-cyan-400">7日 → 1日</h3>
+                    <h3 class="text-6xl font-black text-cyan-400" id="impact-number-3">7日 → 3日</h3>
                     <p class="text-xl font-bold text-white mt-2">へ短縮</p>
                     <p class="text-gray-400 mt-1">提案スピード</p>
                 </div>
@@ -407,7 +427,7 @@
                 <h2 class="section-title text-white mb-12 data-anim>未来への、確かな<br class="hidden md:block">一歩。</h2>
                 <p class="max-w-2xl mx-auto mt-4 text-gray-400 text-base md:text-lg leading-relaxed" data-anim>この新提案フローが成功した暁には、ぜひパイロット案件で<br>その効果を共に検証させていただけますと幸いです。</p>
                 <div class="mt-12" data-anim>
-                    <a href="#" class="inline-block bg-gradient-to-r from-cyan-500 to-magenta-600 font-bold text-lg py-4 px-12 rounded-full transform transition-transform duration-300 hover:scale-105">
+                    <a href="#" class="inline-block bg-cyan-600 hover:bg-cyan-500 font-bold text-lg py-4 px-12 rounded-full transform transition-transform duration-300 hover:scale-105 text-white">
                         今後の展開について相談する
                     </a>
                 </div>
@@ -463,6 +483,55 @@
             ease: "power3.out",
         });
 
+        // Solutionセクションのカード重なりアニメーション
+        ScrollTrigger.create({
+            trigger: "#solution",
+            start: "top 80%",
+            onEnter: () => {
+                // 従来方式カードの初期状態
+                gsap.set("#old-card", {
+                    x: -100,
+                    y: -50,
+                    rotation: 15,
+                    opacity: 0
+                });
+                
+                // 新方式カードの初期状態
+                gsap.set("#new-card", {
+                    x: 100,
+                    y: 50,
+                    rotation: -15,
+                    opacity: 0
+                });
+                
+                // カードが中央に集まって重なるアニメーション
+                gsap.to("#old-card", {
+                    duration: 1.5,
+                    x: 0,
+                    y: 0,
+                    rotation: 0,
+                    opacity: 0.8,
+                    ease: "power3.out",
+                    delay: 0.5
+                });
+                
+                gsap.to("#new-card", {
+                    duration: 1.5,
+                    x: 0,
+                    y: 0,
+                    rotation: 0,
+                    opacity: 1,
+                    ease: "power3.out",
+                    delay: 0.8,
+                    onComplete: () => {
+                        // 重なり完了後に輝く効果を追加
+                        document.querySelector("#new-card").classList.add("card-overlap");
+                    }
+                });
+            },
+            once: true
+        });
+
         // Impactセクションの数字カウンターアニメーション
         ScrollTrigger.create({
             trigger: "#impact",
@@ -484,11 +553,35 @@
                         val: finalValue,
                         ease: "power3.out",
                         onUpdate: () => {
-                            el.textContent = Math.floor(obj.val) + "万";
+                            el.textContent = obj.val.toFixed(1) + "万";
                         }
                     });
                 };
-                animateNumber(document.querySelector('.text-magenta-400'), 2.5);
+                
+                // 7日→3日のアニメーション
+                const animateDays = (el) => {
+                    let obj = { val: 7 };
+                    gsap.to(obj, {
+                        duration: 2,
+                        val: 3,
+                        ease: "power3.out",
+                        onUpdate: () => {
+                            el.textContent = "7日 → " + Math.floor(obj.val) + "日";
+                        }
+                    });
+                };
+                
+                // Impactセクション内の2.5万円の要素を特定
+                const impactElement = document.querySelector('#impact .text-magenta-400');
+                if (impactElement) {
+                    animateNumber(impactElement, 2.5);
+                }
+                
+                // 7日→3日のアニメーション実行
+                const daysElement = document.querySelector('#impact-number-3');
+                if (daysElement) {
+                    animateDays(daysElement);
+                }
             },
             once: true // アニメーションを1回だけ実行
         });
