@@ -105,6 +105,18 @@
             }
         }
         
+        /* モックアップカードの高さ固定 */
+        .showcase-card {
+            height: 384px !important;
+            min-height: 384px !important;
+            max-height: 384px !important;
+        }
+        .showcase-card img {
+            height: 384px !important;
+            min-height: 384px !important;
+            max-height: 384px !important;
+        }
+        
         /* 背景のグリッド線 */
         .background-grid {
             position: absolute;
@@ -362,8 +374,8 @@
                 </div>
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Sample 1: 芽吹き型ダイカット -->
-                    <a href="mockups.html" class="showcase-card group relative aspect-square overflow-hidden rounded-lg shadow-xl bg-black/70 transform transition-transform duration-500 hover:scale-105 block">
-                        <img src="images/mockup-1-budding.png" class="w-full h-full object-cover" alt="芽吹き型ダイカット - 暗闇が映し出す、本当の自分。FEELCYCLE">
+                    <a href="mockup-1-budding.html" class="showcase-card group relative h-96 overflow-hidden rounded-lg shadow-xl bg-black/70 transform transition-transform duration-500 hover:scale-105 block" style="height: 384px !important; min-height: 384px !important; max-height: 384px !important;">
+                        <img src="images/mockup-1-budding.png" class="w-full h-full object-cover object-center" alt="芽吹き型ダイカット - 暗闇が映し出す、本当の自分。FEELCYCLE">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                             <div>
                                 <h3 class="text-2xl font-bold text-white">芽吹き型ダイカット</h3>
@@ -385,8 +397,8 @@
                         </div>
                     </a>
                     <!-- Sample 2: ミラー型ダイカット -->
-                    <a href="mockups.html" class="showcase-card group relative aspect-square overflow-hidden rounded-lg shadow-xl bg-black/70 transform transition-transform duration-500 hover:scale-105 block">
-                        <img src="images/mockup-2-mirror.png" class="w-full h-full object-cover" alt="ミラー型ダイカット - 運動を超えた、新しい私。FEELCYCLE">
+                    <a href="mockup-2-mirror.html" class="showcase-card group relative h-96 overflow-hidden rounded-lg shadow-xl bg-black/70 transform transition-transform duration-500 hover:scale-105 block" style="height: 384px !important; min-height: 384px !important; max-height: 384px !important;">
+                        <img src="images/mockup-2-mirror.png" class="w-full h-full object-cover object-center" alt="ミラー型ダイカット - 運動を超えた、新しい私。FEELCYCLE">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                             <div>
                                 <h3 class="text-2xl font-bold text-white">ミラー型ダイカット</h3>
@@ -408,8 +420,8 @@
                         </div>
                     </a>
                     <!-- Sample 3: リボン型ダイカット -->
-                    <a href="mockups.html" class="showcase-card group relative aspect-square overflow-hidden rounded-lg shadow-xl bg-black/70 transform transition-transform duration-500 hover:scale-105 block">
-                        <img src="images/mockup-3-ribbon.png" class="w-full h-full object-cover" alt="リボン型ダイカット - 楽しさが、体を変える。FEELCYCLE">
+                    <a href="mockup-3-ribbon.html" class="showcase-card group relative h-96 overflow-hidden rounded-lg shadow-xl bg-black/70 transform transition-transform duration-500 hover:scale-105 block" style="height: 384px !important; min-height: 384px !important; max-height: 384px !important;">
+                        <img src="images/mockup-3-ribbon.png" class="w-full h-full object-cover object-center" alt="リボン型ダイカット - 楽しさが、体を変える。FEELCYCLE">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
                             <div>
                                 <h3 class="text-2xl font-bold text-white">リボン型ダイカット</h3>
@@ -509,11 +521,13 @@
             });
         });
 
-        // Showcaseカードのアニメーション
+        // Showcaseカードのアニメーション（高さ固定のため無効化）
+        /*
         gsap.from(".showcase-card", {
             scrollTrigger: {
                 trigger: "#showcase",
                 start: "top 80%",
+                once: true // 一度だけ実行
             },
             duration: 1,
             opacity: 0,
@@ -521,6 +535,7 @@
             stagger: 0.2,
             ease: "power3.out",
         });
+        */
         
         // モックアップカードのホバーアニメーション
         document.querySelectorAll('.showcase-card').forEach(card => {
